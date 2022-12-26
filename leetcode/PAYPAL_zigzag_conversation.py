@@ -57,3 +57,4 @@ if __name__ == '__main__':
     print(sol.convert("PAYPALISHIRING", 3))
     # print(sol.convert("PAYPALISHIRING", 4))
     # print(sol.convert("ABCDE", 4))
+    # print(sol.convert("ABCDE", 1))
