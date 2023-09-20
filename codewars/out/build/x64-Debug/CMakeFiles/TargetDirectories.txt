@@ -1,5 +1,0 @@
-D:/Files/Study/IT/CodeWars/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-D:/Files/Study/IT/CodeWars/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
-D:/Files/Study/IT/CodeWars/out/build/x64-Debug/CodeWars/CMakeFiles/CodeWars.dir
-D:/Files/Study/IT/CodeWars/out/build/x64-Debug/CodeWars/CMakeFiles/edit_cache.dir
-D:/Files/Study/IT/CodeWars/out/build/x64-Debug/CodeWars/CMakeFiles/rebuild_cache.dir
