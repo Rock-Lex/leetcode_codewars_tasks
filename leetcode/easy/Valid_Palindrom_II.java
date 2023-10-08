@@ -3,44 +3,41 @@ package easy;
 Type: Easy
 680. Valid Palindrome II
 https://leetcode.com/problems/valid-palindrome-ii/
+
+Time Complexity :- BigO(N)
+Space Complexity :- BigO(1)
  */
 
 public class Valid_Palindrom_II {
-    static class Solution {
-        public boolean isPalindrome(String str) {
-            str = str.replaceAll("[\\s\\W_]","");
-            System.out.println(str);
-            int strLenght = str.length();
-            if (strLenght == 1 || strLenght == 2 && str.charAt(0) == str.charAt(1)) {
-                return true;
-            } else if (strLenght % 2 == 0) {
-                String leftStr = str.substring(0, strLenght/2);
-                String rightStr = str.substring(strLenght/2, strLenght);
-                return leftStr.equalsIgnoreCase(reverseString(rightStr));
-            } else {
-                String leftStr = str.substring(0, strLenght/2);
-                String rightStr = str.substring(strLenght/2 + 1, strLenght);
-                return leftStr.equalsIgnoreCase(reverseString(rightStr));
-            }
+    class Solution {
+        public boolean validPalindrome(String s) {
+            return isPalindrome(s, 0, s.length() - 1, false);
         }
 
-        public String reverseString(String str) {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(str);
-            return stringBuilder.reverse().toString();
+        public boolean isPalindrome(final String s, int leftIndex, int rightIndex, final boolean isCharacterDeleted){
+            while(leftIndex < rightIndex){
+                if(s.charAt(leftIndex) != s.charAt(rightIndex)){
+                    if(isCharacterDeleted){
+                        return false;
+                    }
+                    // isPalindrome(s, leftIndex + 1, rightIndex, true) for cases like "ececabbacec"
+                    // isPalindrome(s, leftIndex, rightIndex - 1, true) for cases like "abccbab"
+                    return isPalindrome(s, leftIndex + 1, rightIndex, true) || isPalindrome(s, leftIndex, rightIndex - 1, true);
+                }
+                ++leftIndex;
+                --rightIndex;
+            }
+            return true;
         }
     }
 
-    public static void main(String[] args){
+
+    public void main(String[] args){
 //        String s = "babad";
-//        String s = "cbbd";
-//        String s = "A man, a plan, a canal: Panama";
-//        String s = "ab_a";
-//
-//        easy.Valid_Palindrom.Solution sol = new easy.Valid_Palindrom.Solution();
-////        String answear = sol.longestPalindrome(s);
-//        Boolean answear = sol.isPalindrome(s);
-//        System.out.println(answear);
+        String s = "aba";
+        Solution sol = new Solution();
+        Boolean answear = sol.validPalindrome(s);
+        System.out.println(answear);
 
     }
 }
