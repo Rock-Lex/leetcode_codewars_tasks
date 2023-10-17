@@ -19,8 +19,6 @@ public class Valid_Palindrom_II {
                     if(isCharacterDeleted){
                         return false;
                     }
-                    // isPalindrome(s, leftIndex + 1, rightIndex, true) for cases like "ececabbacec"
-                    // isPalindrome(s, leftIndex, rightIndex - 1, true) for cases like "abccbab"
                     return isPalindrome(s, leftIndex + 1, rightIndex, true) || isPalindrome(s, leftIndex, rightIndex - 1, true);
                 }
                 ++leftIndex;
