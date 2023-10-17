@@ -51,25 +51,6 @@ public class Longest_Palindromic_Substring {
         }
     }
 
-        private String getPalindromicSubstring(String s) {
-            int leftIndex = 0;
-            int rightIndex = s.length() - 1;
-            String answear = s;
-            while (leftIndex < rightIndex)
-            {
-                if (answear.charAt(leftIndex) == answear.charAt(rightIndex)) {
-                    leftIndex++;
-                    rightIndex--;
-                }
-                else {
-                    answear = getPalindromicSubstring(s.substring(leftIndex))
-                }
-            }
-            return answear;
-        }
-
-    }
-
     public static void main(String[] args){
 //        String s = "babad";
         String s = "cbbd";
