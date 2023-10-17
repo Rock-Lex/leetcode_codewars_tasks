@@ -9,7 +9,7 @@ package easy;
 
 import java.util.Arrays;
 
-public class MergeSortedArray {
+public class Merge_Sorted_Array {
     static class Solution {
         public void merge(int[] nums1, int m, int[] nums2, int n) {
             for (int i = m, j = 0; i < m+n; ++i) {

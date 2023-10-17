@@ -25,7 +25,7 @@ public class Remove_Duplicates_Sorted_Array {
 //    This solution is not as efficient as the first one
     static class Solution2 {
         public int removeDuplicates(int[] nums) {
-            Hashtable<Integer, Integer> num_hashtable = new Hashtable<Integer, Integer>();
+            Hashtable<Integer, Integer> num_hashtable = new Hashtable<>();
             int index = 0;
             for (int i = 0; i < nums.length; ++i) {
                 if (num_hashtable.get(nums[i]) == null) {
