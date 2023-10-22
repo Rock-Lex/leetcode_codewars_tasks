@@ -22,7 +22,7 @@ public class Remove_Duplicates_Sorted_Array_II {
             return j;
         }
     }
-    static class BadSolution {
+    static class SecondSolution {
         public int removeDuplicates(int[] nums) {
             Hashtable<Integer, Integer> num_hashtable = new Hashtable<>();
             int index = 0;

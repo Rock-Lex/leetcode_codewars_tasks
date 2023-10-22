@@ -43,7 +43,7 @@ public class Longest_Palindrome {
     }
 
 //    Bad solution. But it works
-    static class BadSolution {
+    static class SecondSolution {
         public int longestPalindrome(String s) {
             Hashtable<String, Integer> num_chars = new Hashtable<String, Integer>();
             for (int i = 0; i < s.length(); ++i) {
