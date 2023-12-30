@@ -24,8 +24,6 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 package medium;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.*;
 
 public class RotateArray {

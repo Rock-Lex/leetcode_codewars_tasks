@@ -1,3 +1,9 @@
+"""
+Type: Easy
+342. Power of Four
+https://leetcode.com/problems/power-of-four/
+"""
+
 import math
 
 
