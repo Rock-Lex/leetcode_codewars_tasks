@@ -13,7 +13,7 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Valdiate_Binary_Tree_Nodes {
+public class Validate_Binary_Tree_Nodes {
     static class Solution {
 
         // Breadth-First Search to check if the given nodes form a valid binary tree
