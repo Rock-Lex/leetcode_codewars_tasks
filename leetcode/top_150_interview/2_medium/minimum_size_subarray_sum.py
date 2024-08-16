@@ -11,7 +11,15 @@ import time
 
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        pass
+        slide_window, sum_answ = 0, 0
+        answ = math.inf
+        for el in range(len(nums)):
+            sum_answ += nums[el]
+            while sum_answ >= target:
+                answ = min(answ, el-slide_window+1)
+                sum_answ -= nums[slide_window]
+                slide_window += 1
+        return answ if answ != math.inf else 0
 
 
 class BadSolution:
@@ -42,10 +50,11 @@ class BadSolution:
         return max(best_len, 0)
 
 
-# target = 15
-target = 7
+target = 15
+# target = 6
 
-nums = [2,3,1,2,4,3]
+# nums = [10,2,3]
+nums = [5,1,3,5,10,7,4,9,2,8]
 
 sol = Solution()
 ic(sol.minSubArrayLen(target, nums))
