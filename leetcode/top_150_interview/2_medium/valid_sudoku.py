@@ -7,6 +7,9 @@ https://leetcode.com/problems/valid-sudoku/description/?envType=study-plan-v2&en
 from icecream import ic
 from typing import List
 
+from collections import defaultdict
+
+
 class Solution:
     @staticmethod
     def isValidSudoku(board: List[List[str]]) -> bool:
@@ -32,57 +35,21 @@ class Solution:
 
         row_i = 0
         cell_i = 0
-        row_counter = {
-            "0": set(),
-            "1": set(),
-            "2": set(),
-            "3": set(),
-            "4": set(),
-            "5": set(),
-            "6": set(),
-            "7": set(),
-            "8": set(),
-        }
-        column_counter = {
-            "0": set(),
-            "1": set(),
-            "2": set(),
-            "3": set(),
-            "4": set(),
-            "5": set(),
-            "6": set(),
-            "7": set(),
-            "8": set(),
-        }
-        box_counter = {
-            "0": set(),
-            "1": set(),
-            "2": set(),
-            "3": set(),
-            "4": set(),
-            "5": set(),
-            "6": set(),
-            "7": set(),
-            "8": set(),
-        }
+        row_counter = defaultdict(set)
+        column_counter = defaultdict(set)
+        box_counter = defaultdict(set)
 
         for row in board:
             for cell in row:
                 box = box_translator(row_i, cell_i)
                 if cell != ".":
-                    if cell in box_counter[box]:
+                    if (cell in box_counter[box]
+                            or cell in row_counter[str(row_i)]
+                            or cell in column_counter[str(cell_i)]):
                         return False
                     else:
                         box_counter[box].add(cell)
-
-                if cell != ".":
-                    if cell in row_counter[str(row_i)]:
-                        return False
-                    else:
                         row_counter[str(row_i)].add(cell)
-                    if cell in column_counter[str(cell_i)]:
-                        return False
-                    else:
                         column_counter[str(cell_i)].add(cell)
                 cell_i += 1
             row_i += 1
